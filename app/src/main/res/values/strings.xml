@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Weight Pal</string>
+    <string name="empty_data">Hey, You need to add some data with the cute pink button. </string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_sign_up">Sign Up</string>
+    <string name="title_activity_main">Weight Pal</string>
+
+    <string name="about">Your Activity</string>
+    <string name="bmi_calc">Check BMI</string>
+    <string name="sign_out">Sign Out</string>
+
+</resources>

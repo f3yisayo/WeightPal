@@ -1,0 +1,7 @@
+<resources>
+    <style name="AppTheme.Lollipop" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="android:colorControlNormal">#ffffff</item>
+        <item name="android:colorControlActivated">@color/md_grey_50</item>
+        <item name="android:colorControlHighlight">@color/md_grey_50</item>
+    </style>
+</resources>
