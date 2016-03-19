@@ -30,33 +30,33 @@ import com.mikepenz.materialdrawer.model.interfaces.IProfile;
 
 public class MainActivity extends AppCompatActivity {
 
-    Firebase ref = new Firebase("https://weight-pal.firebaseio.com");
-
-    AuthData authData;
-
     // Generated avatar For our account header;
     TextDrawable letterDrawable;
     ColorGenerator generator;
 
+    Drawer drawer;
+
     SharedPreferences userInfo;
+
 
     @InjectView(R.id.tool_bar) Toolbar toolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        userInfo = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+
         setContentView(R.layout.activity_main);
 
         ButterKnife.inject(this);
 
         setSupportActionBar(toolbar);
 
-        userInfo = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
-
-
         appDrawer();
 
     }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -126,7 +126,7 @@ public class MainActivity extends AppCompatActivity {
                 .withHeaderBackgroundScaleType(ImageView.ScaleType.CENTER_CROP)
                 .build();
 
-        Drawer drawer = new DrawerBuilder()
+        drawer = new DrawerBuilder()
                 .withActivity(this)
                 .withToolbar(toolbar)
                 .withActionBarDrawerToggleAnimated(true)
@@ -154,7 +154,13 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        // disable going back to the Login Activity
-        moveTaskToBack(true);
+
+        if (drawer != null && drawer.isDrawerOpen()) {
+            drawer.closeDrawer();
+        }
+        else{
+            // disable going back to the Login Activity
+            moveTaskToBack(true);
+        }
     }
 }

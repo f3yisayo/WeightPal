@@ -4,6 +4,7 @@ public class UserSchema {
 
     private String name;
     private String email;
+    private String password;
 
 
     // Empty constructor for Firebase.
@@ -15,5 +16,9 @@ public class UserSchema {
 
     public String getName() {
         return name;
+    }
+
+    public String getPassword() {
+        return password;
     }
 }

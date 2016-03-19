@@ -28,11 +28,13 @@ public class LoginActivity extends AppCompatActivity {
 
     Firebase ref = new Firebase("https://weight-pal.firebaseio.com");
 
+
+
     private static final int REQUEST_SIGNUP = 0;
     private static final String TAG = "LoginActivity";
 
     AlertDialog alertDialog;
-    Intent intent;
+
 
     SharedPreferences userInfo;
     SharedPreferences.Editor editor;
@@ -84,7 +86,7 @@ public class LoginActivity extends AppCompatActivity {
         super.onResume();
         // Check if the user is authenticated before showing the MainActivity
         if(checkUserAuthState()) {
-            intent = new Intent(getApplicationContext(), MainActivity.class);
+            Intent intent = new Intent(getApplicationContext(), MainActivity.class);
             startActivity(intent);
         }
     }
@@ -118,6 +120,7 @@ public class LoginActivity extends AppCompatActivity {
 
                         // Store our user's data for later use with sharedPrefs
                         ref.child("users").child(authData.getUid()).addValueEventListener(new ValueEventListener() {
+
                             @Override
                             public void onDataChange(DataSnapshot snapshot) {
                                 UserSchema user = snapshot.getValue(UserSchema.class);
@@ -125,7 +128,13 @@ public class LoginActivity extends AppCompatActivity {
                                 // We store our user's name and email here in our editor
                                 editor.putString("name", user.getName());
                                 editor.putString("email", user.getEmail());
-                                editor.apply();
+                                editor.commit();
+
+                                progressDialog.dismiss();
+
+                                // Start our activity immediately
+                                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                                startActivity(intent);
 
                             }
 
@@ -135,7 +144,7 @@ public class LoginActivity extends AppCompatActivity {
                             }
                         });
 
-                        progressDialog.dismiss();
+                        //progressDialog.dismiss();
 
                         // Authenticate our user then store the user data in
                         // /users/<uid> where /users can be any arbitrary path tp store data
@@ -150,8 +159,7 @@ public class LoginActivity extends AppCompatActivity {
                         // Store the user's auth state in users/auth/<uid>
                         ref.child("users/auth").child(authData.getUid()).setValue(map);
 
-                        intent = new Intent(getApplicationContext(), MainActivity.class);
-                        startActivity(intent);
+
                     }
 
                     @Override
