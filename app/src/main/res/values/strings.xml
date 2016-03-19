@@ -10,5 +10,6 @@
     <string name="about">Your Activity</string>
     <string name="bmi_calc">Check BMI</string>
     <string name="sign_out">Sign Out</string>
+    <string name="title_activity_calorie">CalorieActivity</string>
 
 </resources>

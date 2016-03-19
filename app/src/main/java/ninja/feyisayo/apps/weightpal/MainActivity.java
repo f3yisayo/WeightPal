@@ -1,9 +1,11 @@
 package ninja.feyisayo.apps.weightpal;
 
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v4.view.LayoutInflaterCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -30,6 +32,8 @@ import com.mikepenz.materialdrawer.model.interfaces.IProfile;
 
 public class MainActivity extends AppCompatActivity {
 
+    Firebase ref = new Firebase("https://weight-pal.firebaseio.com");
+
     // Generated avatar For our account header;
     TextDrawable letterDrawable;
     ColorGenerator generator;
@@ -38,8 +42,8 @@ public class MainActivity extends AppCompatActivity {
 
     SharedPreferences userInfo;
 
-
     @InjectView(R.id.tool_bar) Toolbar toolbar;
+    @InjectView(R.id.add_food_data_btn) FloatingActionButton fab;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,6 +56,15 @@ public class MainActivity extends AppCompatActivity {
         ButterKnife.inject(this);
 
         setSupportActionBar(toolbar);
+
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent1 = new Intent(getApplicationContext(), CalorieActivity.class);
+                startActivity(intent1);
+
+            }
+        });
 
         appDrawer();
 
@@ -150,6 +163,11 @@ public class MainActivity extends AppCompatActivity {
 
         drawer.setSelection(item1, true);
 
+    }
+
+    @Override
+    public void onStart(){
+        super.onStart();
     }
 
     @Override

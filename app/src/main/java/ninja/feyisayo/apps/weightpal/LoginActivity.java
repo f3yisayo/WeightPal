@@ -82,8 +82,8 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     @Override
-    public void onResume(){
-        super.onResume();
+    public void onStart(){
+        super.onStart();
         // Check if the user is authenticated before showing the MainActivity
         if(checkUserAuthState()) {
             Intent intent = new Intent(getApplicationContext(), MainActivity.class);
