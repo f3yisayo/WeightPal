@@ -3,7 +3,7 @@ buildscript {
         jcenter()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:1.2.3'
+        classpath 'com.android.tools.build:gradle:1.5.0'
     }
 }
 apply plugin: 'com.android.application'
@@ -54,6 +54,7 @@ dependencies {
     compile 'com.android.support:design:23.2.1'
     compile 'com.firebase:firebase-client-android:2.5.0'
     compile 'com.jakewharton:butterknife:6.1.0'
+    compile 'com.rengwuxian.materialedittext:library:2.1.4'
     compile 'com.amulyakhare:com.amulyakhare.textdrawable:1.0.1'
     compile 'com.github.gabrielemariotti.cards:cardslib-core:2.1.0'
     compile 'com.github.gabrielemariotti.cards:cardslib-cards:2.1.0'

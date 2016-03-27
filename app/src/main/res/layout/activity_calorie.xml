@@ -2,11 +2,99 @@
                 xmlns:tools="http://schemas.android.com/tools"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
                 tools:context="ninja.feyisayo.apps.weightpal.CalorieActivity">
 
 
-    <include android:id="@+id/tool_bar"
-             layout="@layout/toolbar"/>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <include android:id="@+id/tool_bar"
+            layout="@layout/toolbar"/>
+
+        <TextView
+            android:id="@+id/calorie_digit"
+            android:layout_marginTop="86dp"
+            android:layout_centerHorizontal="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/abc_text_size_display_4_material"
+            android:fontFamily="sans-serif-thin"
+            android:text="56"
+            />
+
+        <TextView
+            android:id="@+id/calorie_text"
+            android:layout_centerHorizontal="true"
+            android:layout_toRightOf="@id/calorie_digit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@id/calorie_digit"
+            android:text="cal"
+            android:textSize="16sp"
+            />
+
+        <GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="232dp"
+            android:padding="16dp"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:rowCount="2"
+            android:columnCount="2">
+
+                    <com.mikepenz.iconics.view.IconicsImageView
+                        android:layout_height="24dp"
+                        android:layout_width="24dp"
+                        android:paddingTop="@dimen/materialize_baseline_grid"
+                        android:layout_row="0"
+                        android:layout_column="0"
+                        app:iiv_color="@color/md_grey_600"
+                        app:iiv_icon="gmd-restaurant_menu"
+                        />
+
+                    <AutoCompleteTextView
+
+                        android:layout_row="0"
+                        android:layout_column="1"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginRight="48dp"
+                        android:layout_marginBottom="24dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="What did you eat?"
+                        />
+
+
+
+            <com.mikepenz.iconics.view.IconicsImageView
+                android:layout_height="24dp"
+                android:layout_width="24dp"
+                android:layout_row="1"
+                android:layout_column="0"
+                android:paddingTop="@dimen/materialize_baseline_grid"
+                app:iiv_color="@color/md_grey_600"
+                app:iiv_icon="gmd-restaurant_menu"
+                />
+
+                    <AutoCompleteTextView
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginRight="48dp"
+                        android:layout_row="1"
+                        android:layout_column="1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="What did you eat?"
+                    />
+
+
+            </GridLayout>
+
+
+
+    </RelativeLayout>
 
 
 </ScrollView>
