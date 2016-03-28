@@ -35,4 +35,9 @@
         <item name="colorButtonNormal">@color/md_indigo_400</item>
     </style>
 
+    <style name="AppTheme.AutoCompleteText" parent="Widget.AppCompat.Light.AutoCompleteTextView">
+        <item name="android:textColor">@color/md_grey_850</item>
+
+    </style>
+
 </resources>

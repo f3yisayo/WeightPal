@@ -6,19 +6,22 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.support.design.widget.FloatingActionButton;
-import android.support.v4.view.LayoutInflaterCompat;
+import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import butterknife.ButterKnife;
 import butterknife.InjectView;
 import com.amulyakhare.textdrawable.TextDrawable;
 import com.amulyakhare.textdrawable.util.ColorGenerator;
-import com.firebase.client.*;
-import com.mikepenz.iconics.context.IconicsLayoutInflater;
+import com.firebase.client.DataSnapshot;
+import com.firebase.client.Firebase;
+import com.firebase.client.FirebaseError;
+import com.firebase.client.ValueEventListener;
 import com.mikepenz.materialdrawer.AccountHeader;
 import com.mikepenz.materialdrawer.AccountHeaderBuilder;
 import com.mikepenz.materialdrawer.Drawer;
@@ -44,6 +47,8 @@ public class MainActivity extends AppCompatActivity {
 
     @InjectView(R.id.tool_bar) Toolbar toolbar;
     @InjectView(R.id.add_food_data_btn) FloatingActionButton fab;
+    @InjectView(R.id.main_activity)
+    RelativeLayout mainActivityLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -168,6 +173,18 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public void onStart(){
         super.onStart();
+
+        ref.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                Snackbar.make(mainActivityLayout, "You have internet access", Snackbar.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onCancelled(FirebaseError firebaseError) {
+                Snackbar.make(mainActivityLayout, "Can't connect to the internet", Snackbar.LENGTH_SHORT).show();
+            }
+        });
     }
 
     @Override

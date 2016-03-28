@@ -31,9 +31,8 @@
             android:label="@string/title_activity_main" >
         </activity>
         <activity
-
             android:name=".CalorieActivity"
-            android:label="@string/title_activity_calorie" >
+            android:label="@string/title_activity_calorie">
         </activity>
     </application>
 

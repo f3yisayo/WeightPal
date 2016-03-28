@@ -2,6 +2,7 @@
                 xmlns:tools="http://schemas.android.com/tools"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:id="@+id/calorie_container"
                 xmlns:app="http://schemas.android.com/apk/res-auto"
                 tools:context="ninja.feyisayo.apps.weightpal.CalorieActivity">
 
@@ -56,7 +57,7 @@
                         />
 
                     <AutoCompleteTextView
-
+                        android:id="@+id/food_editText"
                         android:layout_row="0"
                         android:layout_column="1"
                         android:layout_marginLeft="16dp"
@@ -69,25 +70,7 @@
 
 
 
-            <com.mikepenz.iconics.view.IconicsImageView
-                android:layout_height="24dp"
-                android:layout_width="24dp"
-                android:layout_row="1"
-                android:layout_column="0"
-                android:paddingTop="@dimen/materialize_baseline_grid"
-                app:iiv_color="@color/md_grey_600"
-                app:iiv_icon="gmd-restaurant_menu"
-                />
 
-                    <AutoCompleteTextView
-                        android:layout_marginLeft="16dp"
-                        android:layout_marginRight="48dp"
-                        android:layout_row="1"
-                        android:layout_column="1"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:hint="What did you eat?"
-                    />
 
 
             </GridLayout>
