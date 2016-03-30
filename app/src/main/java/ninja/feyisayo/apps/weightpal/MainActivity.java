@@ -1,7 +1,6 @@
 package ninja.feyisayo.apps.weightpal;
 
 
-import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
@@ -60,13 +59,13 @@ public class MainActivity extends AppCompatActivity {
 
         ButterKnife.inject(this);
 
+
+
         setSupportActionBar(toolbar);
 
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent1 = new Intent(getApplicationContext(), CalorieActivity.class);
-                startActivity(intent1);
 
             }
         });

@@ -2,9 +2,9 @@ package ninja.feyisayo.apps.weightpal;
 
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
+import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.util.Log;
 import android.util.Patterns;
 import android.view.View;
@@ -14,7 +14,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 import butterknife.ButterKnife;
 import butterknife.InjectView;
-
 import com.firebase.client.Firebase;
 import com.firebase.client.FirebaseError;
 
@@ -196,8 +195,8 @@ public class SignUpActivity extends AppCompatActivity {
             emailText.setError(null);
         }
 
-        if (password.isEmpty() || password.length() < 4 || password.length() > 10) {
-            passwordText.setError("between 4 and 10 alphanumeric characters");
+        if (password.isEmpty() || password.length() > 5) {
+            passwordText.setError("At least 5 alphanumeric characters");
             valid = false;
         } else
             passwordText.setError(null);

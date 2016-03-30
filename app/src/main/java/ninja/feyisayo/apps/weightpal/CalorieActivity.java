@@ -87,7 +87,7 @@ public class CalorieActivity extends AppCompatActivity {
 
             @Override
             public void onCancelled(FirebaseError firebaseError) {
-                System.out.println("The read failed.");
+
             }
         });
 
