@@ -12,4 +12,16 @@
     <string name="sign_out">Sign Out</string>
     <string name="title_activity_calorie">CalorieActivity</string>
 
+    <string name="ex1_name">Inverted V Pipe</string>
+    <string name="ex2_name">W Leg Lifts Exercise</string>
+    <string name="ex3_name">Jump Squats Exercise</string>
+    <string name="ex4_name">Skipping Exercise</string>
+
+    <string name="ex1_desc">Best mat exercises for abs in which you need to lie down on the floor facing downwards.</string>
+    <string name="ex2_desc">This exercise will work your legs and abs. You need to lie down on the mat facing upwards.</string>
+    <string name="ex3_desc">The jump squat exercise is a power packed cardio exercise to lose weight that is often included in various fitness regimes.</string>
+    <string name="ex4_desc">This is best exercise to lose weight for both men and women. It is simple, easy to do and entertaining so that you don’t get bored.</string>
+
+
+
 </resources>

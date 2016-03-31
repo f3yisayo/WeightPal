@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView
+    android:id="@+id/cv"
+    android:layout_marginTop="4dp"
+    android:layout_marginBottom="4dp"
+    android:layout_width="match_parent"
+    android:layout_height="128dp"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/exerciseImage"
+            android:scaleType="center"
+            android:layout_alignParentRight="true" />
+
+        <TextView
+            android:padding="16dp"
+            android:textColor="@color/md_grey_850"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/exerciseName"
+            android:textSize="24sp"
+            />
+
+        <TextView
+            android:layout_width="250dp"
+            android:paddingTop="16dp"
+            android:paddingLeft="16dp"
+            android:id="@+id/exerciseDesc"
+            android:textColor="@color/md_grey_600"
+            android:layout_marginBottom="2dp"
+            android:layout_marginTop="50dp"
+            android:layout_height="wrap_content"
+            android:textSize="14sp"
+
+            />
+
+    </RelativeLayout>
+
+
+</android.support.v7.widget.CardView>

@@ -37,7 +37,7 @@ public class CalorieActivity extends AppCompatActivity {
 
         ButterKnife.inject(this);
         provideToolbarEnhancement();
-        testData();
+        fetchData();
     }
 
     @Override
@@ -64,7 +64,7 @@ public class CalorieActivity extends AppCompatActivity {
     }
 
 
-    public void testData(){
+    public void fetchData(){
 
         final ArrayList<String> foodNames = new ArrayList<String>();
 
