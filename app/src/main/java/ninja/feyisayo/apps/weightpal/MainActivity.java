@@ -18,6 +18,7 @@ import butterknife.ButterKnife;
 import butterknife.InjectView;
 import com.amulyakhare.textdrawable.TextDrawable;
 import com.amulyakhare.textdrawable.util.ColorGenerator;
+import com.bartoszlipinski.recyclerviewheader.RecyclerViewHeader;
 import com.firebase.client.Firebase;
 import com.mikepenz.materialdrawer.AccountHeader;
 import com.mikepenz.materialdrawer.AccountHeaderBuilder;
@@ -51,6 +52,8 @@ public class MainActivity extends AppCompatActivity {
     CoordinatorLayout mainActivityLayout;
     @InjectView(R.id.rv)
     RecyclerView rv;
+    @InjectView(R.id.mainActivity_header)
+    RecyclerViewHeader recyclerViewHeader;
 
     private List<Exercise> exercises;
 
@@ -89,7 +92,11 @@ public class MainActivity extends AppCompatActivity {
         rv.setHasFixedSize(true);
         rv.setLayoutManager(llm);
 
+        llm.setOrientation(LinearLayoutManager.VERTICAL);
+
         rv.setAdapter(rvAdapter);
+
+        recyclerViewHeader.attachTo(rv, true);
     }
 
 
@@ -112,7 +119,6 @@ public class MainActivity extends AppCompatActivity {
         exercises.add(new Exercise(ex2_name, ex2_desc, R.drawable.d128 ));
         exercises.add(new Exercise(ex3_name, ex3_desc, R.drawable.e128 ));
         exercises.add(new Exercise(ex4_name, ex4_desc, R.drawable.b128 ));
-
     }
 
 
@@ -122,21 +128,6 @@ public class MainActivity extends AppCompatActivity {
         getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
     }
-
-    /*@Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-
-        int id = item.getItemId();
-
-        switch (id) {
-            case R.id.action_settings:
-                return true;
-            case R.id.help:
-                return true;
-        }
-
-        return super.onOptionsItemSelected(item);
-    }*/
 
     public void appDrawer() {
 

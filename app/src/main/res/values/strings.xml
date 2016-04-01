@@ -17,6 +17,10 @@
     <string name="ex3_name">Jump Squats Exercise</string>
     <string name="ex4_name">Skipping Exercise</string>
 
+    <string name="food_eaten">How often do you eat in a day?</string>
+    <string name="food_eaten_set">%1$s</string>
+
+
     <string name="ex1_desc">Best mat exercises for abs in which you need to lie down on the floor facing downwards.</string>
     <string name="ex2_desc">This exercise will work your legs and abs. You need to lie down on the mat facing upwards.</string>
     <string name="ex3_desc">The jump squat exercise is a power packed cardio exercise to lose weight that is often included in various fitness regimes.</string>
