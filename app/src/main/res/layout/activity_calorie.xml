@@ -1,4 +1,4 @@
-<ScrollView
+<android.support.design.widget.CoordinatorLayout
     android:id="@+id/calorie_container"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -6,6 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:theme="@style/AppTheme"
+    app:layout_scrollFlags="scroll"
     tools:context="ninja.feyisayo.apps.weightpal.CalorieActivity">
 
 
@@ -55,7 +56,7 @@
             android:focusable="true"
             android:focusableInTouchMode="true"
             android:padding="16dp"
-            android:rowCount="5">
+            android:rowCount="6">
 
             <com.mikepenz.iconics.view.IconicsImageView
                 android:layout_width="24dp"
@@ -78,7 +79,6 @@
                     android:id="@+id/food_editText"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-
                     android:layout_column="1"
                     android:layout_row="0"
                     android:hint="What did you eat?" />
@@ -93,7 +93,7 @@
                 android:layout_row="1"
                 android:paddingTop="@dimen/materialize_baseline_grid"
                 app:iiv_color="@color/md_grey_600"
-                app:iiv_icon="gmd-terrain" />
+                app:iiv_icon="gmd-local_drink" />
 
             <android.support.design.widget.TextInputLayout
                 android:layout_width="match_parent"
@@ -103,15 +103,16 @@
                 android:layout_marginRight="48dp">
 
                 <AutoCompleteTextView
-                    android:id="@+id/weight_editText"
+                    android:id="@+id/drinks_edittext"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-
                     android:layout_column="1"
                     android:layout_row="1"
-                    android:hint="What do you currently weigh?" />
+                    android:hint="What did you drink?" />
 
             </android.support.design.widget.TextInputLayout>
+
+
 
             <com.mikepenz.iconics.view.IconicsImageView
                 android:layout_width="24dp"
@@ -121,7 +122,7 @@
                 android:layout_row="2"
                 android:paddingTop="@dimen/materialize_baseline_grid"
                 app:iiv_color="@color/md_grey_600"
-                app:iiv_icon="gmd-layers" />
+                app:iiv_icon="gmd-terrain" />
 
             <android.support.design.widget.TextInputLayout
                 android:layout_width="match_parent"
@@ -130,15 +131,18 @@
                 android:layout_marginLeft="16dp"
                 android:layout_marginRight="48dp">
 
-                <AutoCompleteTextView
-                    android:id="@+id/futureweight_editText"
+                <EditText
+                    android:id="@+id/weight_editText"
+                    android:inputType="number"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_column="1"
                     android:layout_row="2"
-                    android:hint="Weight target a month from now?" />
+                    android:hint="What do you currently weigh in kg's?" />
 
             </android.support.design.widget.TextInputLayout>
+
+
 
             <com.mikepenz.iconics.view.IconicsImageView
                 android:layout_width="24dp"
@@ -148,6 +152,33 @@
                 android:layout_row="3"
                 android:paddingTop="@dimen/materialize_baseline_grid"
                 app:iiv_color="@color/md_grey_600"
+                app:iiv_icon="gmd-trending_up" />
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="48dp">
+
+                <EditText
+                    android:inputType="number"
+                    android:id="@+id/futureweight_editText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_column="1"
+                    android:layout_row="3"
+                    android:hint="Weight target a month from now?" />
+
+            </android.support.design.widget.TextInputLayout>
+
+            <com.mikepenz.iconics.view.IconicsImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_column="0"
+                android:layout_row="4"
+                android:paddingTop="@dimen/materialize_baseline_grid"
+                app:iiv_color="@color/md_grey_600"
                 app:iiv_icon="gmd-person" />
 
             <TextView
@@ -155,18 +186,39 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_column="1"
-                android:layout_row="3"
+                android:layout_row="4"
                 android:paddingLeft="16dp"
-                android:paddingTop="16dp"
+                android:layout_marginBottom="8dp"
+                android:layout_marginTop="8dp"
                 android:text="@string/food_eaten"
                 android:textSize="18sp" />
 
+            <com.mikepenz.iconics.view.IconicsImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_column="0"
+                android:layout_row="5"
+                android:layout_marginTop="14dp"
+                app:iiv_color="@color/md_grey_600"
+                app:iiv_icon="gmd-accessibility" />
+
+            <EditText
+                android:id="@+id/user_height"
+                android:inputType="number"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="1"
+                android:layout_row="5"
+                android:layout_marginLeft="12dp"
+                android:layout_marginTop="8dp"
+                android:hint="What's your current height in m?"
+                android:textSize="18sp" />
 
         </GridLayout>
 
         <LinearLayout
             android:layout_marginLeft="58dp"
-            android:layout_marginTop="520dp"
+            android:layout_marginTop="630dp"
             android:orientation="horizontal"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content">
@@ -179,6 +231,7 @@
                 android:layout_height="wrap_content" />
 
             <CheckBox
+                android:id="@+id/health_checkbox"
                 android:layout_marginLeft="16dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
@@ -189,4 +242,4 @@
     </RelativeLayout>
 
 
-</ScrollView>
+</android.support.design.widget.CoordinatorLayout>

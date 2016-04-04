@@ -18,7 +18,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 import butterknife.ButterKnife;
 import butterknife.InjectView;
-
 import com.firebase.client.*;
 
 import java.util.HashMap;
@@ -268,8 +267,8 @@ public class LoginActivity extends AppCompatActivity {
             emailText.setError(null);
         }
 
-        if(password.isEmpty() || password.length() < 4  || password.length() > 10){
-            passwordText.setError("Between 4 and 10 alphanumeric characters");
+        if(password.isEmpty() || password.length() < 5 ){
+            passwordText.setError("At least 5 alphanumeric characters");
             valid = false;
         }
         else {

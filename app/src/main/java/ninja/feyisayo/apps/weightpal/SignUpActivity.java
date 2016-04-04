@@ -195,7 +195,7 @@ public class SignUpActivity extends AppCompatActivity {
             emailText.setError(null);
         }
 
-        if (password.isEmpty() || password.length() > 5) {
+        if (password.isEmpty() || password.length() < 5) {
             passwordText.setError("At least 5 alphanumeric characters");
             valid = false;
         } else

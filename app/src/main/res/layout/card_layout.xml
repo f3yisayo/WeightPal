@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:layout_marginTop="8dp"
+        android:clipToPadding="false"
+        app:cardElevation="2dp"
+        app:cardUseCompatPadding="true">
+
+        <RelativeLayout android:id="@+id/data_card"
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/username"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="32dp"
+                android:paddingTop="16dp"
+                android:text="@string/name_text"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/calories_consumed"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="48dp"
+                android:fontFamily="sans-serif-thin"
+                android:text="0"
+                android:textSize="@dimen/abc_text_size_display_4_material" />
+
+            <TextView
+                android:id="@+id/welcome_message"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="42dp"
+                android:paddingLeft="32dp"
+                android:text="Calories consumed today"
+                android:textSize="14sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@id/calories_consumed"
+                android:layout_toRightOf="@id/calories_consumed"
+                android:text="cal"
+                android:textSize="16sp" />
+
+            <ImageView
+                android:layout_width="122dp"
+                android:layout_height="122dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="16dp"
+                android:layout_marginTop="42dp"
+                android:src="@drawable/lactose_free" />
+
+            <TextView
+                android:id="@+id/target_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="32dp"
+                android:layout_marginTop="194dp"
+                android:paddingBottom="16dp"
+                android:text="@string/target"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/current_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@id/target_text"
+                android:layout_marginLeft="94dp"
+                android:layout_toRightOf="@id/target_text"
+                android:text="show date"
+                android:textSize="14sp" />
+
+
+        </RelativeLayout>
+
+    </android.support.v7.widget.CardView>
+
+
+</LinearLayout>

@@ -10,6 +10,7 @@ public class WeightPalApp extends android.app.Application {
         super.onCreate();
         // We initialize our firebase context here
         Firebase.setAndroidContext(this);
+        Firebase.getDefaultConfig().setPersistenceEnabled(true);
     }
 
 }
